@@ -1,0 +1,32 @@
+.CardFeature{
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    max-width: 95vw;
+    margin: auto;
+    color: #fff;
+    overflow: auto;
+ 
+}
+/* ::-webkit-scrollbar {
+    display: none;
+  } */
+
+.CardFeature img{
+    margin-bottom: -18px;
+    display: block;
+}
+.listBtn{
+    transform: translate(13px, -40px);
+    cursor: pointer;
+}
+.listBtn:hover{
+    opacity: 0.5;
+}
+.CardFeature p{
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+.CardFeature .secondary{
+    color: #F5C518;
+}
