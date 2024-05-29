@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "/assets/Logo.svg";
 import arrow from "/assets/icons/arrow.svg";
@@ -6,6 +6,8 @@ import search from "/assets/icons/search.svg";
 import watchlist from "/assets/icons/watchList.svg";
 import user from "/assets/icons/user.svg";
 import mode from "/assets/icons/mode.svg";
+import close from "/assets/icons/close.svg";
+
 import "./navbar.css";
 
 function Navbar() {
@@ -22,6 +24,32 @@ function Navbar() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (event.target.closest(".menu-modal") === null && isMenuOpen) {
+        closeMenu();
+      }
+    };
+
+    const handleEscapeKey = (event) => {
+      if (event.key === "Escape" && isMenuOpen) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleEscapeKey);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isMenuOpen]);
 
   return (
     <header>
@@ -70,6 +98,7 @@ function Navbar() {
       </div>
       {isMenuOpen && (
         <div className="menu-modal">
+            <img src={close} alt="close" className="closeModal" />
           <ul>
             {navlinks.map((link, index) => (
               <li key={index}>
