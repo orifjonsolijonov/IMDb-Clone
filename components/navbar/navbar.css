@@ -1,211 +1,241 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-  }
-  
-  :root {
-    --primary-bg: #000;
-    --secondary-bg: #1a1a1a;
-    --text-color: #c3c3c3;
-    --padding-horizontal: clamp(0.5rem, 1vw, 1.2rem);
-    --padding-vertical: clamp(0.4rem, 0.8vw, 1rem);
-    --gap: clamp(0.5rem, .7vw, 1rem);
-    --font-size: clamp(1.2rem, 1.5vw, 1.6rem);
-  }
-  
-  html {
-    font-size: 62.5%; /* 1rem = 10px */
-  }
-  
-  header {
-    background-color: var(--primary-bg);
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  --primary-bg: #000;
+  --secondary-bg: #1a1a1a;
+  --text-color: #c3c3c3;
+  --padding-horizontal: clamp(0.5rem, 1vw, 1.2rem);
+  --padding-vertical: clamp(0.4rem, 0.8vw, 1rem);
+  --gap: clamp(0.5rem, 0.7vw, 1rem);
+  --font-size: clamp(1.2rem, 1.5vw, 1.6rem);
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+header {
+  background-color: var(--primary-bg);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 95vw;
+  gap: var(--gap);
+  margin: 0 auto;
+  padding: var(--padding-vertical) 0;
+  color: var(--text-color);
+  font-size: var(--font-size);
+  position: relative;
+}
+
+header .container a img {
+  max-height: 4rem;
+}
+
+header .container .hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 2.4rem;
+  color: var(--text-color);
+}
+
+header .container nav {
+  display: flex;
+  align-items: center;
+}
+
+header .container nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  gap: var(--gap);
+}
+
+header .container nav ul li a {
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  text-decoration: none;
+  color: var(--text-color);
+  white-space: nowrap; /* Prevents wrapping */
+}
+
+header .container .searchArea,
+header .container .searchAreaDropDown_All,
+header .container .watchList,
+header .container .user,
+header .container .lang,
+header .container .themeMode {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding-inline: 0.5rem;
+  gap: 0.5rem;
+}
+
+header .container .searchArea {
+  width: 32%;
+  background-color: var(--secondary-bg);
+  padding: 1.15rem 1rem;
+  border-radius: 1rem;
+}
+
+header .container .searchArea input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  background-color: transparent;
+  padding-left: 1rem;
+}
+
+header .container .watchList,
+header .container .user,
+header .container .lang,
+header .container .themeMode,
+header .container .hamburger {
+  padding: 1rem 1.5rem;
+}
+
+header .container .watchList:hover,
+header .container .user:hover,
+header .container .lang:hover,
+header .container .lang:hover,
+header .container .hamburger:hover {
+  background-color: var(--secondary-bg);
+  border-radius: 1rem;
+}
+
+.menu-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.menu-modal ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+.menu-modal ul li {
+  margin: 1rem 0;
+}
+
+.menu-modal ul li a {
+  font-size: 2rem;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+@media (max-width: 1112px) {
   header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 95vw;
-    gap: var(--gap);
-    margin: 0 auto;
-    padding: var(--padding-vertical) 0;
-    color: var(--text-color);
-    font-size: var(--font-size);
-    position: relative;
+    /* gap: 1rem; */
   }
-  
-  header .container a img {
-    max-height: 4rem;
-  }
-  
-  header .container .hamburger {
-    display: none;
-    cursor: pointer;
-    font-size: 2.4rem;
-    color: var(--text-color);
-  }
-  
-  header .container nav {
-    display: flex;
-    align-items: center;
-  }
-  
-  header .container nav ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style-type: none;
-    gap: var(--gap);
-  }
-  
-  header .container nav ul li a {
-    padding: var(--padding-vertical) var(--padding-horizontal);
-    text-decoration: none;
-    color: var(--text-color);
-    white-space: nowrap; /* Prevents wrapping */
-  }
-  
-  header .container .searchArea,
-  header .container .searchAreaDropDown_All,
-  header .container .watchList,
-  header .container .user,
-  header .container .lang,
-  header .container .themeMode {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    padding-inline: .5rem;
-    gap: 0.5rem;
-  }
-  
   header .container .searchArea {
-    width: 32%;
-    background-color: var(--secondary-bg);
-    padding: 1.15rem 1rem;
-    border-radius: 1rem;
+    width: auto;
+    flex-grow: 1;
   }
-  
-  header .container .searchArea input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background-color: transparent;
-    padding-left: 1rem;
-  }
-  
-  header .container .watchList,
-  header .container .user,
-  header .container .lang,
-  header .container .themeMode,
+
   header .container .hamburger {
-    padding: 1rem 1.5rem;
+    display: block;
+    margin-inline: 1rem;
   }
-  
-  header .container .watchList:hover,
-  header .container .user:hover,
-  header .container .lang:hover,
-  header .container .lang:hover,
-  header .container .hamburger:hover {
-    background-color: var(--secondary-bg);
-    border-radius: 1rem;
+
+  header .container nav {
+    display: none;
   }
-  
-  .menu-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+
+  header .container.nav-open nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
   }
-  
-  .menu-modal ul {
-    list-style-type: none;
+
+  header .container nav ul {
+    flex-direction: column;
+  }
+
+  header .container nav ul li {
+    width: 100%;
     text-align: center;
   }
-  
-  .menu-modal ul li {
-    margin: 1rem 0;
+
+  header .container nav ul li a {
+    padding: 1rem;
+    display: block;
   }
-  
-  .menu-modal ul li a {
-    font-size: 2rem;
+}
+
+@media screen and (max-width: 771px) {
+  header .container {
+    gap: 1rem;
+    .user,
+    .lang,
+    .watchList {
+      display: none;
+    }
+    .hamburger {
+      padding-inline: 0;
+    }
+    .logo {
+      padding-right: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 375px) {
+  header .container {
+    .searchAreaDropDown_All {
+      display: none;
+    }
+    .searchArea {
+      flex-grow: 0;
+      background-color: transparent;
+    }
+    #search {
+      visibility: hidden;
+    }
+  }
+}
+/* Dropdown styles */
+
+.movies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 96vw;
+  margin: auto;
+  padding-block: 7rem;
+}
+.movies .leftLinksSide {
+  display: flex;
+  gap: 10vw;
+}
+.movies .leftLinksSide ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  list-style: none;
+  li a {
+    font-size: 1.8rem;
     color: var(--text-color);
     text-decoration: none;
   }
-  
-  @media (max-width: 1112px) {
-    header .container {
-      /* gap: 1rem; */
-    }
-    header .container .searchArea {
-        width: auto;
-        flex-grow: 1;
-      }
-      
-    header .container .hamburger {
-      display: block;
-      margin-inline: 1rem;
-    }
-  
-    header .container nav {
-      display: none;
-    }
-  
-    header .container.nav-open nav {
-      display: flex;
-    }
-  
-    header .container nav ul {
-      flex-direction: column;
-    }
-  
-    header .container nav ul li {
-      width: 100%;
-      text-align: center;
-    }
-  
-    header .container nav ul li a {
-      padding: 1rem;
-      display: block;
-    }
-  }
-  
-@media screen and (max-width: 771px) {
-    header .container{
-        gap: 1rem;
-        .user, .lang, .watchList {
-            display: none;
-        }
-        .hamburger {
-            padding-inline: 0;
-        }
-        .logo {
-            padding-right: 1rem;
-        }
-    }
 }
-@media screen and (max-width: 375px) {
-    header .container{
-        .searchAreaDropDown_All {
-            display: none;
-        }
-        .searchArea {
-            flex-grow: 0;
-            background-color: transparent;
-        }
-        #search {
-            visibility: hidden;
-        }
-    }
+.movies .rightImgSide .moviesDropdown_img {
+  max-width: 288px;
 }

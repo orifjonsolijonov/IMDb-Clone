@@ -1,3 +1,4 @@
+// import icons
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "/assets/Logo.svg";
@@ -7,9 +8,11 @@ import watchlist from "/assets/icons/watchList.svg";
 import user from "/assets/icons/user.svg";
 import mode from "/assets/icons/mode.svg";
 import close from "/assets/icons/close.svg";
-
+// import styles
 import "./navbar.css";
 
+// import components
+import MoviesDropdown from "./moviesDropdown.jsx";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navlinks = [
@@ -108,6 +111,8 @@ function Navbar() {
           </ul>
         </div>
       )}
+      <MoviesDropdown/>
+
     </header>
   );
 }
