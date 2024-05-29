@@ -54,12 +54,12 @@ function Navbar() {
   return (
     <header>
       <div className="container">
-        <a href="#">
-          <img src={Logo} alt="logo" />
-        </a>
         <div className="hamburger" onClick={toggleMenu}>
           {isMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
+        <a href="#">
+          <img src={Logo} alt="logo" className="logo"/>
+        </a>
         <nav className={isMenuOpen ? "nav-open" : ""}>
           <ul>
             {navlinks.map((link, index) => (
@@ -98,7 +98,7 @@ function Navbar() {
       </div>
       {isMenuOpen && (
         <div className="menu-modal">
-            <img src={close} alt="close" className="closeModal" />
+            <img src={close} alt="close" className="closeModal" onClick={() => closeMenu()}/>
           <ul>
             {navlinks.map((link, index) => (
               <li key={index}>
