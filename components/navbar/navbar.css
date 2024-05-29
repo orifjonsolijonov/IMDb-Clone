@@ -9,6 +9,10 @@
     --primary-bg: #000;
     --secondary-bg: #1a1a1a;
     --text-color: #c3c3c3;
+    --padding-horizontal: clamp(0.5rem, 1vw, 1.2rem);
+    --padding-vertical: clamp(0.4rem, 0.8vw, 1rem);
+    --gap: clamp(0.5rem, 1vw, 1.5rem);
+    --font-size: clamp(1.2rem, 1.5vw, 1.6rem);
   }
   
   html {
@@ -22,13 +26,30 @@
   header .container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 95vw;
-    gap: 1rem;
+    gap: var(--gap);
     margin: 0 auto;
-    padding: 1.7rem 0;
+    padding: var(--padding-vertical) 0;
     color: var(--text-color);
-    font-size: clamp(1.6rem, 1rem, 1.1rem);
+    font-size: var(--font-size);
+    position: relative;
+  }
+  
+  header .container a img {
+    max-height: 4rem;
+  }
+  
+  header .container .hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2.4rem;
+    color: var(--text-color);
+  }
+  
+  header .container nav {
+    display: flex;
+    align-items: center;
   }
   
   header .container nav ul {
@@ -36,12 +57,14 @@
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
+    gap: var(--gap);
   }
   
   header .container nav ul li a {
-    padding: 0.8rem;
+    padding: var(--padding-vertical) var(--padding-horizontal);
     text-decoration: none;
     color: var(--text-color);
+    white-space: nowrap; /* Prevents wrapping */
   }
   
   header .container .searchArea,
@@ -87,5 +110,66 @@
   header .container .themeMode:hover {
     background-color: var(--secondary-bg);
     border-radius: 1rem;
+  }
+  
+  .menu-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .menu-modal ul {
+    list-style-type: none;
+    text-align: center;
+  }
+  
+  .menu-modal ul li {
+    margin: 1rem 0;
+  }
+  
+  .menu-modal ul li a {
+    font-size: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  @media (max-width: 1112px) {
+    header .container {
+      flex-wrap: wrap;
+    }
+  
+    header .container .hamburger {
+      display: block;
+    }
+  
+    header .container nav {
+      display: none;
+    }
+  
+    header .container.nav-open nav {
+      display: flex;
+    }
+  
+    header .container nav ul {
+      flex-direction: column;
+    }
+  
+    header .container nav ul li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    header .container nav ul li a {
+      padding: 1rem;
+      display: block;
+    }
   }
   
