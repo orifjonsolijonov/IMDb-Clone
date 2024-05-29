@@ -214,7 +214,7 @@ header .container .hamburger:hover {
 /* Dropdown styles */
 
 .movies {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   max-width: 96vw;

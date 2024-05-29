@@ -14,6 +14,11 @@
     --font-size: clamp(1.2rem, 1.5vw, 1.6rem);
   }
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+
 .Featured{
     background-color: #0E0E0E;
 }
