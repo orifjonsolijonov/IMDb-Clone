@@ -1,4 +1,5 @@
 import Navbar from "../components/navbar/navbar.jsx"
+import NewFeaturedCar from '../components/newFeaturedCard/newFeaturedCard.jsx'
 
 import "./app.css"
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
 
       <Navbar />
+      <NewFeaturedCar/>
 
     </>
   )
