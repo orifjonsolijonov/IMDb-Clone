@@ -1,82 +1,91 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-}
-
-:root {
-  --display: {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  :root {
+    --primary-bg: #000;
+    --secondary-bg: #1a1a1a;
+    --text-color: #c3c3c3;
+  }
+  
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+  }
+  
+  header {
+    background-color: var(--primary-bg);
+  }
+  
+  header .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    max-width: 95vw;
+    gap: 1rem;
+    margin: 0 auto;
+    padding: 1.7rem 0;
+    color: var(--text-color);
+    font-size: clamp(1.6rem, 1rem, 1.1rem);
   }
-}
-
-html {
-  font-size: 62.5%;
-}
-
-header {
-  background-color: #000;
-}
-
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 95vw;
-  margin: 0 auto;
-  padding: 1.7rem 0;
-  color: #c3c3c3;
-  font-size: 1.6rem;
-  nav ul {
+  
+  header .container nav ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     list-style-type: none;
-    li a {
-      padding: 0.8rem 1rem;
-      text-decoration: none;
-      color: #c3c3c3;
-    }
   }
-  .searchArea,
-  .searchAreaDropDown_All,
-  .watchList,
-  .user,
-  .lang,
-  .themeMode {
+  
+  header .container nav ul li a {
+    padding: 0.8rem;
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  header .container .searchArea,
+  header .container .searchAreaDropDown_All,
+  header .container .watchList,
+  header .container .user,
+  header .container .lang,
+  header .container .themeMode {
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
     gap: 0.5rem;
   }
-  .searchArea {
+  
+  header .container .searchArea {
     width: 32%;
-    background-color: #1a1a1a;
+    background-color: var(--secondary-bg);
     padding: 1.15rem 1rem;
     border-radius: 1rem;
-    input {
-      width: 100%;
-      border: none;
-      outline: none;
-      font-size: 1.6rem;
-      color: #c3c3c3;
-      background-color: transparent;
-      padding-left: 0.5rem;
-    }
   }
-  .watchList,
-  .user,
-  .lang,
-  .themeMode {
+  
+  header .container .searchArea input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background-color: transparent;
+    padding-left: 0.5rem;
+  }
+  
+  header .container .watchList,
+  header .container .user,
+  header .container .lang,
+  header .container .themeMode {
     padding: 1.15rem 1rem;
-    &:hover {
-      background-color: #1a1a1a;
-      border-radius: 1rem;
-    }
   }
-}
+  
+  header .container .watchList:hover,
+  header .container .user:hover,
+  header .container .lang:hover,
+  header .container .themeMode:hover {
+    background-color: var(--secondary-bg);
+    border-radius: 1rem;
+  }
+  
