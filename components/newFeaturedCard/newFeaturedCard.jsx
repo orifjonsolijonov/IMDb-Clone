@@ -1,8 +1,9 @@
 import React from 'react'
 import './newFeaturedCard.css'
 import arrow from '/assets/icons/arrow.svg'
-
+import {useState} from 'react'
 function newFeaturedCard() {
+    const [frame, setFrame] = useState()
   return (
     <div>
          <div className='Featured'>
