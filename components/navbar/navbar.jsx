@@ -1,15 +1,15 @@
-// importing the necessary icons
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "/assets/Logo.svg";
 import arrow from "/assets/icons/arrow.svg";
 import search from "/assets/icons/search.svg";
 import watchlist from "/assets/icons/watchList.svg";
 import user from "/assets/icons/user.svg";
 import mode from "/assets/icons/mode.svg";
-
-// importing styles
 import "./navbar.css";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navlinks = [
     "Movies",
     "TV shows",
@@ -19,13 +19,20 @@ function Navbar() {
     "Community",
   ];
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header>
       <div className="container">
         <a href="#">
-        <img src={Logo} alt="logo" />
+          <img src={Logo} alt="logo" />
         </a>
-        <nav>
+        <div className="hamburger" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </div>
+        <nav className={isMenuOpen ? "nav-open" : ""}>
           <ul>
             {navlinks.map((link, index) => (
               <li key={index}>
@@ -59,9 +66,19 @@ function Navbar() {
           <p>EN</p>
           <img src={arrow} alt="arrow" />
         </div>
-
         <img src={mode} alt="mode" className="themeMode" />
       </div>
+      {isMenuOpen && (
+        <div className="menu-modal">
+          <ul>
+            {navlinks.map((link, index) => (
+              <li key={index}>
+                <a href="#">{link}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
