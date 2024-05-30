@@ -214,7 +214,7 @@ header .container .hamburger:hover {
 /* Dropdown styles */
 
 .movies {
-  display: none;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 96vw;
@@ -234,6 +234,9 @@ header .container .hamburger:hover {
     font-size: 1.8rem;
     color: var(--text-color);
     text-decoration: none;
+    &:hover {
+        color: white;
+    }
   }
 }
 .movies .rightImgSide .moviesDropdown_img {

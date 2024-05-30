@@ -11,33 +11,34 @@ function moviesDropdown() {
     "India Movie Spotlight",
   ];
 
+  const dropdown = <section className="movies">
+  <div className="leftLinksSide">
+    <div className="links">
+        <ul>
+            {links1.map((link, index) => (
+              <li key={index}>
+                <a href="#">{link}</a>
+              </li>
+            ))}
+        </ul>
+    </div>
+    <div className="links">
+        <ul>
+            {links2.map((link, index) => (
+              <li key={index}>
+                <a href="#">{link}</a>
+              </li>
+            ))}
+        </ul>
+    </div>
+  </div>
+  <div className="rightImgSide">
+    <img src={moviesDropdown_img} alt="img" className="moviesDropdown_img"/>
+  </div>
+</section>
 
   return (
-    <section className="movies">
-      <div className="leftLinksSide">
-        <div className="links">
-            <ul>
-                {links1.map((link, index) => (
-                  <li key={index}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
-            </ul>
-        </div>
-        <div className="links">
-            <ul>
-                {links2.map((link, index) => (
-                  <li key={index}>
-                    <a href="#">{link}</a>
-                  </li>
-                ))}
-            </ul>
-        </div>
-      </div>
-      <div className="rightImgSide">
-        <img src={moviesDropdown_img} alt="img" className="moviesDropdown_img"/>
-      </div>
-    </section>
+    dropdown
   );
 }
 
