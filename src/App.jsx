@@ -1,5 +1,7 @@
 import Navbar from "../components/navbar/navbar.jsx"
-import NewFeaturedCar from '../components/newFeaturedCard/newFeaturedCard.jsx'
+import NewFeaturedCard from '../components/newFeaturedCard/newFeaturedCard.jsx'
+import TopPicks from '../components/newFeaturedCard/TopPicks.jsx'
+import NewTopIMDbCard from '../components/newFeaturedCard/NewTopIMDbCard.jsx'
 
 import "./app.css"
 function App() {
@@ -7,7 +9,9 @@ function App() {
     <>
 
       <Navbar />
-      <NewFeaturedCar/>
+      <NewFeaturedCard/>
+      <TopPicks />
+      <NewTopIMDbCard/>
 
     </>
   )

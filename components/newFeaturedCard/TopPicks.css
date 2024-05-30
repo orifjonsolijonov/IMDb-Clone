@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-  }
 :root {
     --primary-bg: #000;
     --secondary-bg: #1a1a1a;
@@ -17,49 +11,65 @@
   ::-webkit-scrollbar {
     display: none;
   }
-  
-
-.Featured{
-    background-color: #0E0E0E;
-}
-.topFeatured{
+  .topPicks{
+    position: relative;
+    max-width: 95vw;
+    margin:120px auto auto;
+  }
+  .topPicks h1{
+    position: absolute;
+    font-size: clamp(2rem, 14vw, 22rem);
+    z-index: -1;
+    color: #C3C3C3;
+    opacity: 10%;
+    white-space: nowrap;
+    text-align: center;
+    top:clamp(-1.5rem , 14vw, -7rem);
+    bottom:401px;
+    font-weight: 700;
+  }
+  .textBtn p{
+     font-size: 16px;
+     color: #797979;
+  }
+  .top{
     color: #fff;
     display: flex;
     justify-content: space-between;
     max-width: 95vw;
     margin: auto;
     padding-block: 10px;
-    
 }
-.topFeatured h2{
+.textBtn h2{
     font-size: 2.8rem;
     font-weight: 200;
     display: flex;
     align-items: center;
     gap: 10px;
     color: var(--text-color);
+    margin-bottom: 5px;
 }
-.topFeatured h2 span{
+.textBtn h2 span{
     border: 4px solid #F5C518;
     border-radius: 50%;
 }
-.topFeatured  .btn{
+.top  .btn{
    display: flex;
    align-items: center;
    gap: 5px;
 }
-.topFeatured  .btn img{
+.top  .btn img{
     background-color: #a3a3a358;
     border-radius: 50%;
     width: 36px;
     height: 36px;
     cursor: pointer;
 }
-.topFeatured  .btn #arrow1{
+.top  .btn #arrow1{
     transform:rotate(90deg);
     opacity: 0.5;
 }
-.topFeatured  .btn #arrow2{
+.top  .btn #arrow2{
     transform:rotate(-90deg);
     
 }

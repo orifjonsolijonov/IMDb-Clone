@@ -6,6 +6,7 @@
     margin: auto;
     color: #fff;
     overflow: auto;
+    scroll-behavior: smooth;
  
 }
 /* ::-webkit-scrollbar {
