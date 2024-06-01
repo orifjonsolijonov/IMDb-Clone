@@ -50,10 +50,15 @@ function CreateSection() {
         scrollRef.current.scrollLeft -= window.innerWidth;
       }
     };
+
+    const span = () => {
+      return <span style={{ border: "4px solid #F5C518" }}></span>;
+    };
   return (
     <div className='CreateSection'>
          <h1>Videos</h1>
       <TopSection
+          span={span()}
           title="IMDb Originals"
           subtitle="Celebrity interviews, trending entertainment stories, and expert analysis"
           onPrevClick={prevBtn}

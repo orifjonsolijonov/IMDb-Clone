@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    margin-top: 30px ;
     margin-bottom: 120px;
     overflow:auto;
 }
@@ -23,7 +22,7 @@
     display: block;
     transition: transform .4s;
 }
-.picksCards #card img:hover{
+.picksCards #card .cardImg:hover:first-of-type{
   transform: scale(1.09);
   transition: transform .4s;
 }
@@ -50,15 +49,7 @@
     color: #C3C3C3;
 }
 .picksCards .cardBtn{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 8px 18px;
-    background-color: #a3a3a319;
-    outline: none;
-    border:.8px solid #a3a3a305;
     border-radius: 1rem;
-    color: #C3C3C3;
     cursor: pointer;
     box-shadow:inset 1px 1px 5px #ffffff05;
 }

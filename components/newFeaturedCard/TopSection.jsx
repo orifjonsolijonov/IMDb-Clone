@@ -1,10 +1,10 @@
 import React from 'react';
 
-function TopSection({ title, subtitle, linkIcon, onPrevClick, onNextClick, prevIcon, nextIcon }) {
+function TopSection({ span,title, subtitle, linkIcon, onPrevClick, onNextClick, prevIcon, nextIcon }) {
   return (
     <div className="top">
       <div className="textBtn">
-        <h2><span></span>{title} {linkIcon && <img src={linkIcon} alt="linkArrow" />} </h2>
+        <h2>{span}{title} {linkIcon && <img src={linkIcon} alt="linkArrow" />} </h2>
         <p>{subtitle}</p>
       </div>
       <div className="btn">

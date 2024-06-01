@@ -55,11 +55,15 @@ function NewFeaturedCard() {
         scrollRef.current.scrollLeft -= window.innerWidth; // 200px ga orqaga scroll qiladi, kerakli qiymatni tanlang
       }
     };
+    const span = () => {
+      return <span style={{ border: "4px solid #F5C518" }}></span>;
+    };
 
     return (
         <div className='Featured'>
             <div className="topFeatured">
             <TopSection
+          span = {span()}  
           title="Featured Today"
           onPrevClick={prevBtn}
           onNextClick={nextBtn}

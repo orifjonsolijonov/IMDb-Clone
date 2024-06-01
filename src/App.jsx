@@ -3,6 +3,7 @@ import NewFeaturedCard from '../components/newFeaturedCard/newFeaturedCard.jsx'
 import TopPicks from '../components/newFeaturedCard/TopPicks.jsx'
 import NewTopIMDbCard from '../components/newFeaturedCard/NewTopIMDbCard.jsx'
 import CreateSection from '../components/newFeaturedCard/CreateSection.jsx'
+import StreamingCard from '../components/newFeaturedCard/StreamingCard.jsx'
 
 import "./app.css"
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <TopPicks />
       <NewTopIMDbCard/>
       <CreateSection/>
-
+      <StreamingCard />
     </>
   )
 }
