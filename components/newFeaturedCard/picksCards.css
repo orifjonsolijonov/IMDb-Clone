@@ -52,10 +52,13 @@
     border-radius: 1rem;
     cursor: pointer;
     box-shadow:inset 1px 1px 5px #ffffff05;
+    transition: .2s;
+
 }
 .picksCards{
     scroll-behavior: smooth;
 }
 .picksCards .cardBtn:hover{
    opacity: 0.6;
+   transition: .2s;
 }

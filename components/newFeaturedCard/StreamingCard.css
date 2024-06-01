@@ -13,28 +13,69 @@
     font-weight: 700;
 }
 .strMenu{
-    display: flex;
-    align-items: center;
     background-color: #a3a3a34d;
     padding: .9rem;
-    gap: 5rem;
     border-radius: 1.8rem;
+    display: flex;
+    align-items: center;
+}
+.NavstrMenu{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
 }
 
-.strMenu h5{
+.mobiList h5{
     font-size: 1.8rem;
     color: #C3C3C3;
     cursor: pointer;
     font-weight: 400;
     padding: 1.2rem 2.2rem;
+    white-space: nowrap;
 }
-.strMenu h5.active{
+.mobiList h5.active{
     background-color: #F5C518;
     border-radius: 1rem;
     color: black;
+    transition: .6s ;
 }
-.strMenu h5:hover{
+.mobiList h5:hover{
     background-color: #F5C518;
     border-radius: 1rem;
     color: black;
+    transition: .6s;
+
 }
+ .mobiBtn{
+    cursor: pointer;
+    display: none;
+}
+ 
+@media screen and (max-width: 877px) {
+   .mobiList{
+        display: none;
+    }
+    .mobiList{
+        flex-direction: column;
+        gap: 1rem;
+        align-items: start;
+    }
+    .NavstrMenu{
+       flex-direction: column;
+       gap: 1rem;
+       align-items: start;
+    }
+    .mobiBtn{
+        display: block;
+    }
+    .mobiList.active{
+        display: block;
+    }
+    .strMenu{
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+    }
+}
+
