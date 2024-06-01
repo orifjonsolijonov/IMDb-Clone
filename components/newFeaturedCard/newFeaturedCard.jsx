@@ -7,6 +7,7 @@ import cardImg2 from '/assets/cardImg2.png';
 import cardImg3 from '/assets/cardImg3.png';
 import cardImg4 from '/assets/cardImg4.png';
 import button from '/assets/button.svg';
+import TopSection from './TopSection';
 
 function NewFeaturedCard() {
     const [frame, setFrame] = useState([
@@ -58,11 +59,13 @@ function NewFeaturedCard() {
     return (
         <div className='Featured'>
             <div className="topFeatured">
-                <h2><span></span>Featured Today</h2>
-                <div className="btn">
-                    <img onClick={prevBtn} id='arrow1' src={arrow} alt="arrow" />
-                    <img onClick={nextBtn} id='arrow2' src={arrow} alt="arrow" />
-                </div>
+            <TopSection
+          title="Featured Today"
+          onPrevClick={prevBtn}
+          onNextClick={nextBtn}
+          prevIcon={arrow}
+          nextIcon={arrow}
+      />
             </div>
             <Card frame={frame} scrollRef={scrollRef} />
         </div>

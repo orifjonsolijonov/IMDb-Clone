@@ -4,6 +4,7 @@
     justify-content: space-between;
     gap: 15px;
     margin-top: 30px ;
+    margin-bottom: 120px;
     overflow:auto;
 }
 .picksCards #card{
@@ -20,6 +21,11 @@
 }
 .picksCards #card img{
     display: block;
+    transition: transform .4s;
+}
+.picksCards #card img:hover{
+  transform: scale(1.09);
+  transition: transform .4s;
 }
 .picksCards #card h3{
     font-size: 2rem;

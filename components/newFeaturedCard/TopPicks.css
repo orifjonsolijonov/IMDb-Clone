@@ -18,14 +18,15 @@
   }
   .topPicks h1{
     position: absolute;
-    font-size: clamp(2rem, 14vw, 22rem);
+    font-size: clamp(2rem, 14vw, 21rem);
     z-index: -1;
     color: #C3C3C3;
     opacity: 10%;
     white-space: nowrap;
     text-align: center;
-    top:clamp(-1.5rem , 14vw, -7rem);
-    bottom:401px;
+    top:clamp(-51rem , 14vw, -6rem);
+    left: 0;
+    right: 0;
     font-weight: 700;
   }
   .textBtn p{
@@ -64,7 +65,9 @@
     width: 36px;
     height: 36px;
     cursor: pointer;
+    border: 1px solid transparent;
 }
+
 .top  .btn #arrow1{
     transform:rotate(90deg);
     opacity: 0.5;

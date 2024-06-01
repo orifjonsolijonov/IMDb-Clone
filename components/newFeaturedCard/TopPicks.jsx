@@ -19,12 +19,6 @@ function TopPicks() {
     { id: 4, title: 'Arrival', cardImg: Picks4 },
     { id: 5, title: 'Inception', cardImg: Picks5 },
     { id: 6, title: 'The Lord of the Rings: The Two Towers', cardImg: Picks6 },
-    { id: 7, title: 'Inception', cardImg: Picks5 },
-    { id: 8, title: 'The Lord of the Rings: The Two Towers', cardImg: Picks6 },
-    { id: 9, title: 'Inception', cardImg: Picks5 },
-    { id: 10, title: 'The Lord of the Rings: The Two Towers', cardImg: Picks6 },
-    { id: 11, title: 'Inception', cardImg: Picks5 },
-    { id: 12, title: 'The Lord of the Rings: The Two Towers', cardImg: Picks4 }
   ]);
 
   const scrollRef = useRef(null);
@@ -33,6 +27,7 @@ function TopPicks() {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft += window.innerWidth;
     }
+    
   };
 
   const prevBtn = () => {

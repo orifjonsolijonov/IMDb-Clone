@@ -16,6 +16,11 @@
 .CardFeature img{
     margin-bottom: -18px;
     display: block;
+    transition: transform .4s;
+}
+.CardFeature img:hover:first-of-type{
+    transform: scale(1.07);
+    transition: transform .4s;
 }
 .listBtn{
     transform: translate(13px, -40px);

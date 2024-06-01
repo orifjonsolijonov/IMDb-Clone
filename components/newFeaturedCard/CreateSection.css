@@ -1,0 +1,60 @@
+.CreateSection{
+    max-width: 95vw;
+    margin: auto auto 12rem;
+    position: relative;
+}
+.CreateSection h1{
+    position: absolute;
+    font-size: clamp(2rem, 14vw, 22rem);
+    z-index: -1;
+    color: #C3C3C3;
+    opacity: 10%;
+    white-space: nowrap;
+    text-align: center;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    font-weight: 700; 
+}
+.creatCard{
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    scroll-behavior: smooth;
+}
+img{
+    display: block;
+}
+.creatCard img:first-of-type{
+  transition: transform .4s;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+ 
+}
+.creatCard img:hover:first-of-type{
+    transform: scale(1.07);
+    transition: transform .4s;
+    border-radius: 1rem;
+}
+.creatCard p{
+    font-size: 1.6rem;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.creatCard .secondary{
+    color: #F5C518;
+    margin-top: .7rem;
+}
+.creatCard .cardBtn{
+    transform: translate(14px, -110px);
+    cursor: pointer;
+    transition: .3s;
+  
+}
+.creatCard .cardBtn:hover{
+    opacity: 0.5;
+    transition: .4s;
+}
